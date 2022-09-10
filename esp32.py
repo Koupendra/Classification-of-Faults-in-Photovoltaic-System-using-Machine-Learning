@@ -20,7 +20,8 @@ def classify(irr, temp, curr, volt):
   r = urequests.post(url, data=data)
   return r.text
 
-#Buttons Setup
+# Pin Setup (according to the model in the picture)
+# Can change as per user convenience
 led = Pin(2, Pin.OUT)
 rgb_r = Pin(12, Pin.OUT)
 rgb_g = Pin(13, Pin.OUT)
