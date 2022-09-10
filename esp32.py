@@ -22,11 +22,11 @@ def classify(irr, temp, curr, volt):
 
 #Buttons Setup
 led = Pin(2, Pin.OUT)
-rgb_r = Pin(23, Pin.OUT)
-rgb_g = Pin(21, Pin.OUT)
-rgb_b = Pin(22, Pin.OUT)
-sensor = dht.DHT11(Pin(4))
-reset_button = Pin(5, Pin.IN)
+rgb_r = Pin(12, Pin.OUT)
+rgb_g = Pin(13, Pin.OUT)
+rgb_b = Pin(14, Pin.OUT)
+sensor = dht.DHT22(Pin(4))
+reset_button = Pin(19, Pin.IN)
 
 ARD = None                # No need to change this
 
