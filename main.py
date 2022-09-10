@@ -36,10 +36,9 @@ def classify():
     print("Classifying Condition...")
     prediction = rf.predict(test_ip)
     print("Classification Result: ", predict_result[prediction[0]])
-    if prediction[0] == 1:
-        return "Normal"
-    mailer.sendMail(rec.email, predict_result[prediction[0]], rec.arduinoId)
-    print("Sending Result to Microcontroller")
+    if prediction[0] != 1:
+    	mailer.sendMail(rec.email, predict_result[prediction[0]], rec.arduinoId)
+    	print("Sending Result to Microcontroller")
     return predict_result[prediction[0]]
 
 @app.route('/')
@@ -77,5 +76,6 @@ def setup():
 
 
 if __name__ == "__main__":
+    # User can change the host IP
     app.run(host='0.0.0.0', port=8080, debug=True)
    
